@@ -36,7 +36,8 @@ public class LoanCalcViewController implements Initializable   {
 	@FXML
 	private Label lblTotalInterest;
 	
-	
+	@FXML
+	// hello
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
