@@ -17,13 +17,24 @@ public class LoanCalcViewController implements Initializable   {
 	
 	@FXML
 	private TextField LoanAmount;
-
+	
+	@FXML
+	private TextField InterestRate;
+	
+	@FXML
+	private TextField NbrOfYears;
+	
+	@FXML
+	private DatePicker PaymentStartDate;
+	
+	@FXML
+	private TextField AdditionalPayment;
 	
 	@FXML
 	private Label lblTotalPayemnts;
 	
 	@FXML
-	private DatePicker PaymentStartDate;
+	private Label lblTotalInterest;
 	
 	
 	
@@ -44,11 +55,22 @@ public class LoanCalcViewController implements Initializable   {
 	@FXML
 	private void btnCalcLoan(ActionEvent event) {
 
-		System.out.println("Amount: " + LoanAmount.getText());
+		System.out.println("Loan Amount: " + LoanAmount.getText());
 		double dLoanAmount = Double.parseDouble(LoanAmount.getText());
-		System.out.println("Amount: " + dLoanAmount);	
+		System.out.println("Loan Amount: " + dLoanAmount);	
 		
-		lblTotalPayemnts.setText("123");
+		/*System.out.println("Interest Rate: " + InterestRate.getText());
+		double dInterestRate = Double.parseDouble(InterestRate.getText());
+		System.out.println("Interest Rate: " + dInterestRate);	
+		
+		System.out.println("Number of Years: " + NbrOfYears.getText());
+		double dNbrOfYears = Double.parseDouble(NbrOfYears.getText());
+		System.out.println("Number of Years: " + dNbrOfYears);	
+		
+		System.out.println("Additional Payment: " + AdditionalPayment.getText());
+		double dAdditionalPayment = Double.parseDouble(AdditionalPayment.getText());
+		System.out.println("Additional Payment: " + dAdditionalPayment);	
+		*/
 		
 		LocalDate localDate = PaymentStartDate.getValue();
 	 
