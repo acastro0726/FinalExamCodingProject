@@ -47,29 +47,7 @@ public class LoanCalcViewController implements Initializable   {
 	@FXML
 	private Label lblTotalInterest;
 	
-	@FXML
-	private TableView tblV;
-	
-	@FXML
-	private TableColumn pmtNbrCol;
-	
-	@FXML
-	private TableColumn pmtDateCol;
-	
-	@FXML
-	private TableColumn pmtCol;
-	
-	@FXML
-	private TableColumn addPmtCol;
-	
-	@FXML
-	private TableColumn interestCol;
-	
-	@FXML
-	private TableColumn principleCol;
-	
-	@FXML
-	private TableColumn balanceCol;
+
 	
 	
 	@Override
@@ -99,30 +77,6 @@ public class LoanCalcViewController implements Initializable   {
 		}
 		
 		
-		public void setTable(Loan l, LocalDate ld) {
-			LinkedList<Payment> list = l.getLoanPayments();
-			ObservableList<Payment> oList = FXCollections.observableArrayList(list);
-			
-			pmtNbrCol.setCellValueFactory(new PropertyValueFactory<Payment,String>("myPmtNbr"));
-			
-			pmtDateCol.setCellValueFactory(new PropertyValueFactory<Payment,String>("pmtDate"));
-			
-			pmtCol.setCellValueFactory(new PropertyValueFactory<Payment, String>("monthPay"));
-			
-			addPmtCol.setCellValueFactory(new PropertyValueFactory<Payment,String>("extraPayment"));
-			
-			interestCol.setCellValueFactory(new PropertyValueFactory<Payment,String>("interest"));
-			
-			principleCol.setCellValueFactory(new PropertyValueFactory<Payment,String>("principle"));
-			
-			balanceCol.setCellValueFactory(new PropertyValueFactory<Payment,String>("balance"));
-			
-			
-			tblV.setItems(oList);
-			
-			
-			
-		}
 		
 		
 		/**
@@ -142,7 +96,6 @@ public class LoanCalcViewController implements Initializable   {
 		LocalDate firstDate = fstPmtDate.getValue(); ;
 		Loan myLoan = createLoan(dLoanAmount, interestRate, term, additionPmt, firstDate);
 		setLabels(myLoan);
-		setTable(myLoan, firstDate);
 		
 	}
 	
