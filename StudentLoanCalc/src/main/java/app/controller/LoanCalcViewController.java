@@ -21,6 +21,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
+
 public class LoanCalcViewController implements Initializable   {
 
 	private StudentCalc SC = null;
