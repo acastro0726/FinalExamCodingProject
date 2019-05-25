@@ -27,7 +27,7 @@ public class LoanTest {
 	}
 
 	@Test
-	public void test1() {
+	public void test2() {
 		//int i = 1;
 		double sum = 0.0;
 		Loan studentL = new Loan(80000.0, .07, 15, 100,ld);
@@ -40,18 +40,6 @@ public class LoanTest {
 		System.out.println("Calc Total Interest: " + studentL.calculateInterestPayment());
 	}
 	
-	@Test
-	public void test2() {
-		//int i = 1;
-		double sum = 0.0;
-		Loan studentL = new Loan(150000.0,.07,20,200,ld);
-		for (Payment p : studentL.getLoanPayments()) 
-		{
-			sum+=p.getInterest();
-		}
-		System.out.println("sum is: " + sum);
-		System.out.println("calc sum is: " + studentL.calculateInterestPayment());
-	}
 
 	@Test
 	public void totalPrincipleTest() {
@@ -67,24 +55,6 @@ public class LoanTest {
 		double interest = L.calculateInterestPayment();
 		System.out.println("Total Interest Payments: " + interest);
 		assertTrue(interest == 34.54);
-	}
-	
-	@Test
-	public void totalPrincipleTest1() {
-		System.out.println("80,000 loan");
-		Loan L = new Loan(80000.0, .07, 15, 100.0,ld);
-		double prin = L.calculatePrinciplePayment();
-		assertTrue(prin == 80000.0);
-		
-	}
-	
-	@Test
-	public void totalInterestTest1() {
-		System.out.println("150,000 loan");
-		Loan L = new Loan(150000.0, .07, 20,200.0,ld);
-		double inte = L.calculateInterestPayment();
-		System.out.println("Total interest Payments is: " + inte);
-		assertTrue(inte ==90702.59 );
 	}
 	
 }

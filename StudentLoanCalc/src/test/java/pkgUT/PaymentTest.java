@@ -17,11 +17,4 @@ public class PaymentTest {
 		//fail("Not yet implemented");
 	}
 	
-	
-	@Test
-	public void test1() {
-		Payment pay = new Payment(100000.0, 0.07,898.83,100.0,ld);
-		System.out.println("---------------------------");
-		Payment pay2 = new Payment(99584.5,0.07, 898.83,100.0,ld);
-	}
 }

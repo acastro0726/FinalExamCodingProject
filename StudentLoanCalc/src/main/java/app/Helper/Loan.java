@@ -6,7 +6,6 @@ import org.apache.poi.ss.formula.functions.*;
 
 public class Loan {
 	
-	
 	double dLoanAmount;
 	double dInterestRate;
 	int iTerm;
@@ -30,8 +29,7 @@ public class Loan {
 		TheLoan();
 	}
 	
-	private void calculatePayment() 
-	{
+	private void calculatePayment() {
 		monthlyPayment = Math.round(-1*FinanceLib.pmt(dInterestRate/12, 12*iTerm, dLoanAmount, 0, false)*100.0)/100.0;
 	}
 	
@@ -44,7 +42,6 @@ public class Loan {
 			loanPayments.add(p);
 			pmtDate = pmtDate.plusMonths(1);	
 		}
-		
 		while(dLoanAmount > (monthlyPayment+dExtraPayment));
 		Payment p = new Payment(dLoanAmount, dInterestRate, monthlyPayment, dExtraPayment,pmtDate.plusMonths(1));
 		loanPayments.add(p);
@@ -76,5 +73,4 @@ public class Loan {
 	{
 		return calculatePrinciplePayment() + calculateInterestPayment();
 	}
-	
 }
